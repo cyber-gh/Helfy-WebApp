@@ -6,8 +6,10 @@
 <h3> 5. To run use: <pre>npm start</pre> </h3>
 <h3> 6. Modify ./src/components/home.js </h3>
 <h1> Happy Coding </h1>
-<h4> Usefull links: <pre>
+<h4> Usefull links: <h4>
 https://reactjs.org/
 https://material-ui.com/
 https://reactrouter.com/
-</pre> </h4>
+
+<h1>App is already generated, skip to step 3 ;)</h1>
+<pre>npm start</pre>
