@@ -14,7 +14,7 @@ function Alert(props) {
 }
 const style = {
     Box:{
-        background: "rgb(255,255,255)",
+        background: "rgb(225,225,225)",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -31,16 +31,16 @@ const style = {
     Element: {
         zIndex: "1000",
         width: "100%",
-        marginBottom: "15px"
+        marginBottom: "15px",
     },
     Brand:{
         position: "absolute",
         top: "23%",
         zIndex: "1000",
         textAlign: "center",
-        color: "black"
+        color: "rgb(153,153,153)",
+        font: '"Segoe UI"'
     }
-
 }
 
 const Login = (props) => {
@@ -82,7 +82,7 @@ const Login = (props) => {
     return(
         <>
             <Box style = {style.Box} maxWidth = "xs">
-                <Typography style = {style.Brand} variant = "h2">INSERT NAME</Typography>
+                <Typography style = {style.Brand} variant = "h2">LOG IN</Typography>
                 <Box style = {style.Box2}>
                     <Custom onChange = {event => setUser(event.target.value)} value = {user} style ={style.Element} id="outlined-basic" label="E-Mail" variant="filled" />
                     <Custom type = {"password"} onChange = {event => setPass(event.target.value)} value = {pass} style ={style.Element} id="outlined-basic" label="Password" variant="filled" />
