@@ -7,9 +7,8 @@
 <h3> 6. Modify ./src/components/home.js </h3>
 <h1> Happy Coding </h1>
 <h4> Usefull links: <h4>
-https://reactjs.org/
-https://material-ui.com/
-https://reactrouter.com/
+https://reactjs.org/ <br>
+https://material-ui.com/ <br>
+https://reactrouter.com/ <br>
 
 <h1>App is already generated, skip to step 3 ;)</h1>
-<pre>npm start</pre>
