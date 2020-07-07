@@ -8,6 +8,7 @@ import {Redirect} from "react-router-dom";
 import CardContent from "@material-ui/core/CardContent";
 import Link from "@material-ui/core/Link";
 import {yellow} from "@material-ui/core/colors";
+import avatar from "../media/user.png";
 const Custom = styled(TextField)({
     borderRadius: "4px",
     backgroundColor: "rgb(255,255,255)",
@@ -73,8 +74,7 @@ const style = {
         fontFamily: "Open Sans"
     },
     Brand:{
-        position: "relative",
-        top: "23%",
+        marginTop: "70px",
         zIndex: "1000",
         textAlign: "center",
         color: "rgb(153,153,153)",
@@ -126,6 +126,7 @@ const Login = (props) => {
         <>
             <ThemeProvider theme={theme}>
                 <Box style = {style.Box} maxWidth = "xs">
+                    <img src = {avatar} style = {{borderRadius: "50%", height: "120px", position: "relative", top: "60px"}}/>
                     <Card variant="outlined">
                         <CardContent style={style.CardStyle}>
                             <Typography style = {style.Brand} variant = "h2">LOG IN</Typography>
@@ -133,7 +134,7 @@ const Login = (props) => {
                                 <Custom onChange = {event => setUser(event.target.value)} value = {user} style ={style.Element} id="outlined-basic" label="E-Mail" variant="outlined" color="red"/>
                                 <Custom type = {"password"} onChange = {event => setPass(event.target.value)} value = {pass} style ={style.Element} id="outlined-basic" label="Password" variant="outlined" />
                                 {loading ?
-                                    <CircularProgress style ={{zIndex: "100", marginTop: "10px"}}/> :
+                                    <CircularProgress style ={{zIndex: "100"}}/> :
                                     <Button onClick={tryLog} style={style.Element2} variant="contained">
                                         Log In
                                     </Button>}
