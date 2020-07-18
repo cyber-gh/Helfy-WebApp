@@ -1,12 +1,8 @@
 import React from "react";
-import {Redirect} from "react-router-dom";
+import utils from "../other/utils";
 
 export default (props) => {
-    if (!props.logged){
-        return(
-            <Redirect to = "/login"/>
-        )
-    }
+    utils.checkLog(props);
     return(
         <h2>test</h2>
     )

@@ -87,7 +87,6 @@ const style = {
 }
 
 const Login = (props) => {
-    console.log(props);
     const [user, setUser] = useState("");
     const [pass, setPass] = useState("");
     const [loading, setLoading] = useState(false);
@@ -98,6 +97,7 @@ const Login = (props) => {
         setTimeout(() => {
             if (user === "admin" && pass === "admin") {
                 props.LogIn();
+                props.history.push("/home");
             }
             else {
                 setDialogState(false);
@@ -117,11 +117,6 @@ const Login = (props) => {
             document.removeEventListener("keyup", handleKey);
         });
     });
-    if (props.logged){
-        return(
-            <Redirect to = '/home'/>
-        )
-    }
     return(
         <>
             <ThemeProvider theme={theme}>
@@ -131,7 +126,7 @@ const Login = (props) => {
                         <CardContent style={style.CardStyle}>
                             <Typography style = {style.Brand} variant = "h2">LOG IN</Typography>
                             <Box style = {style.Box2}>
-                                <Custom onChange = {event => setUser(event.target.value)} value = {user} style ={style.Element} id="outlined-basic" label="E-Mail" variant="outlined" color="red"/>
+                                <Custom onChange = {event => setUser(event.target.value)} value = {user} style ={style.Element} id="outlined-basic" label="E-Mail" variant="outlined"/>
                                 <Custom type = {"password"} onChange = {event => setPass(event.target.value)} value = {pass} style ={style.Element} id="outlined-basic" label="Password" variant="outlined" />
                                 {loading ?
                                     <CircularProgress style ={{zIndex: "100"}}/> :

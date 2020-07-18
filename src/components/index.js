@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Login from "./login";
 import Home from "./home";
+import Dec from "./dec";
 
 import {
     HashRouter as Router,
@@ -18,15 +19,9 @@ const Index = () => {
     return (
         <Router>
             <Switch>
-                <Route exact path="/">
-                    {logged ? <Redirect to = "/home"/> : <Redirect to = "/login"/>}
-                </Route>
-                <Route exact path="/login">
-                    <Login logged = {logged} LogIn = {LogIn}/>
-                </Route>
-                <Route exact path="/home">
-                    <Home logged = {logged} />
-                </Route>
+                <Route exact path="/" render = {(props) => <Dec logged = {logged} {...props} />}/>
+                <Route exact path="/login" render = {(props) => <Login logged = {logged} LogIn = {LogIn} {...props} />}/>
+                <Route exact path="/home" render = {(props) => <Home logged = {logged} {...props}/>}/>
             </Switch>
         </Router>
     );
