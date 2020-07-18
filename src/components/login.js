@@ -82,7 +82,7 @@ const style = {
     },
     CardStyle:{
         // margin: "2rem 1rem 2rem 1rem"
-        padding: "0px"
+        padding: "0px",
     }
 }
 
@@ -122,7 +122,7 @@ const Login = (props) => {
             <ThemeProvider theme={theme}>
                 <Box style = {style.Box} maxWidth = "xs">
                     <img src = {avatar} style = {{borderRadius: "50%", height: "120px", position: "relative", top: "60px"}}/>
-                    <Card variant="outlined">
+                    <Card style = {{marginBottom: "100px"}} variant="outlined">
                         <CardContent style={style.CardStyle}>
                             <Typography style = {style.Brand} variant = "h2">LOG IN</Typography>
                             <Box style = {style.Box2}>
@@ -146,7 +146,6 @@ const Login = (props) => {
                                     Forgot Password
                                 </Link>
                             </Box>
-
                         </CardContent>
                     </Card>
                 </Box>
