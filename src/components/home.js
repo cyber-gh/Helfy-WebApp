@@ -1,9 +1,10 @@
 import React from "react";
 import utils from "../other/utils";
+import Schedule from "./schedule/Schedule"
 
 export default (props) => {
     utils.checkLog(props);
     return(
-        <h2>test</h2>
+        <Schedule />
     )
 }
