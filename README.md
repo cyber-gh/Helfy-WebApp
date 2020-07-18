@@ -1,7 +1,7 @@
   <h2> Before Starting, download and install npm & node package: https://nodejs.org/en/
   <h3> 1. Clone the repository </h3>
   <h3> 2. Generate the dependencies of the project (node_modules). <pre> npm install </pre> </h3>
-  <h3> 3. To run use: <pre>npm start</pre> </h3>
+  <h3> 3. To run use: <pre >npm start </pre> </h3>
   <h3> List of things to keep in mind: </h3>
   <ul>
     <li> <h4> Watch the tutorial listed below, start coding when comforable with "useState", "useEffect" and how React works. </h4> </li>
