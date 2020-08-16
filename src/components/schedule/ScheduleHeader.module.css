@@ -1,0 +1,36 @@
+.schedule_header {
+    width: 100%;
+    background: #e0e0e0;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding-top: 2rem;
+    text-align: center;
+    justify-content: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.title {
+    margin: auto;
+    grid-column: 1 / span 8;
+    grid-row: 1 / span 1;
+    text-align: center;
+}
+
+.days_row {
+    display: grid;
+    grid-column: 1 / span 8;
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.week_day {
+    height: 2rem;
+    color: #ffffff;
+    border: #cccccc 1px solid;
+    text-align: center;
+    background: #6a1b9a;
+    margin-top: auto;
+    margin-bottom: auto;
+}

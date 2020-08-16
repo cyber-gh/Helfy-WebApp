@@ -1,0 +1,28 @@
+.schedule_body {
+    width: 100%;
+    background: #ffffff;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.hours_column {
+    grid-column: 1 / span 1;
+    background: #f3f3f3;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.week_container {
+    grid-column: 2 / span 7;
+    width: 100%;
+    display: grid;
+    background: #ffffff;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.hour_cell {
+    border: #cccccc 1px solid;
+    text-align: center;
+    background: #6a1b9a;
+    color: #ffffff;
+}

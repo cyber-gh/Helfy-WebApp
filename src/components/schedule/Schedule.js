@@ -1,5 +1,4 @@
 import React from "react";
-import { render } from "react-dom";
 import ScheduleHeader from "./ScheduleHeader";
 import ScheduleBody from "./ScheduleBody";
 import { convertDay, generateOutOfSchedule, convertNumToHour, convertHourToNum } from "./utils";
@@ -31,7 +30,7 @@ class Schedule extends React.Component {
       },
     };
 
-    var workingIntervals = [
+    let workingIntervals = [
       { day: "Monday", intervals: [{ startHour: "09:00", endHour: "11:00" }, {startHour:"16:00", endHour:"18:00"}] },
       { day: "Tuesday", intervals: [{ startHour: "09:30", endHour: "16:00" }] },
       {
@@ -51,16 +50,16 @@ class Schedule extends React.Component {
       appointments: [app1],
     });
     // *****************************************************************
-    var appointments = [app1];
-    var i, j;
-    var cells = [];
+    let appointments = [app1];
+    let i, j;
+    let cells = [];
 
     // first extract minim start hour and maximum endhour from all working intervals
-    var minStartHour = 47;
-    var maxEndHour = 0;
-    var it1;
+    let minStartHour = 47;
+    let maxEndHour = 0;
+    let it1;
     for (it1 of workingIntervals) {
-      var it2;
+      let it2;
       for (it2 of it1.intervals) {
         if (convertHourToNum(it2.startHour) < minStartHour) {
           minStartHour = convertHourToNum(it2.startHour);
@@ -72,7 +71,7 @@ class Schedule extends React.Component {
     }
     minStartHour = minStartHour - 1;
     // generate week working hours based on min and max
-    var workingHours = [];
+    let workingHours = [];
     for (i = minStartHour; i <= maxEndHour; i++) {
       workingHours.push(convertNumToHour(i))
     }
@@ -92,7 +91,7 @@ class Schedule extends React.Component {
       }
     }
     // Generate cells representing the appointments
-    var appointment;
+    let appointment;
     for (appointment of appointments) {
       // console.log(appointment);
       let cell = {
@@ -111,16 +110,15 @@ class Schedule extends React.Component {
     }
 
     //  **Generate cells representing out of schedule hours
-    var it1;
     for (it1 of workingIntervals) {
       it1.intervals.push({ startHour: convertNumToHour(maxEndHour), endHour: convertNumToHour(maxEndHour)});
-      var res = generateOutOfSchedule(
+      let res = generateOutOfSchedule(
         it1.intervals,
         minStartHour,
         maxEndHour,
         it1.day
       );
-      var it2;
+      let it2;
       for (it2 of res) {
         cells.push(it2);
       }
@@ -152,5 +150,4 @@ class Schedule extends React.Component {
   }
 }
 
-// render(<Schedule />, document.getElementById("schedule-root"));
 export default Schedule;
