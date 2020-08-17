@@ -1,6 +1,7 @@
 import React from "react";
 
-import styles from "./Cell.module.css"
+import styles from "./Cell.module.css";
+
 
 const Cell = (props) => {
   let row_column = {
