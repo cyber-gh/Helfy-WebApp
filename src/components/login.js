@@ -97,7 +97,7 @@ const Login = (props) => {
         setTimeout(() => {
             if (user === "admin" && pass === "admin") {
                 props.LogIn();
-                props.history.push("/home");
+                props.history.push("/");
             }
             else {
                 setDialogState(false);
@@ -126,8 +126,25 @@ const Login = (props) => {
                         <CardContent style={style.CardStyle}>
                             <Typography style = {style.Brand} variant = "h2">LOG IN</Typography>
                             <Box style = {style.Box2}>
-                                <Custom onChange = {event => setUser(event.target.value)} value = {user} style ={style.Element} id="outlined-basic" label="E-Mail" variant="outlined"/>
-                                <Custom type = {"password"} onChange = {event => setPass(event.target.value)} value = {pass} style ={style.Element} id="outlined-basic" label="Password" variant="outlined" />
+                                <Custom
+                                    onChange = {event => setUser(event.target.value)}
+                                    autoFocus
+                                    type = "email"
+                                    value = {user}
+                                    style ={style.Element}
+                                    id="outlined-basic"
+                                    label="E-Mail"
+                                    variant="outlined"
+                                />
+                                <Custom
+                                    type = {"password"}
+                                    onChange = {event => setPass(event.target.value)}
+                                    value = {pass}
+                                    style ={style.Element}
+                                    id="outlined-basic"
+                                    label="Password"
+                                    variant="outlined"
+                                />
                                 {loading ?
                                     <CircularProgress style ={{zIndex: "100"}}/> :
                                     <Button onClick={tryLog} style={style.Element2} variant="contained">
