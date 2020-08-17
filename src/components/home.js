@@ -5,6 +5,8 @@ import Schedule from "./schedule/Schedule"
 export default (props) => {
     utils.checkLog(props);
     return(
-        <Schedule />
+        <React.Fragment>
+            <Schedule />
+        </React.Fragment>
     )
 }
