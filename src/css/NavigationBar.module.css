@@ -1,7 +1,9 @@
+@import "config.css";
+
 .logo {
     width: 70px;
     height: 70px;
-    color: #333333;
+    color: var(--accent-color-1);
     text-transform: uppercase;
 }
 
@@ -17,8 +19,7 @@
     padding-right: 1.5rem;
     margin: auto;
     overflow: hidden;
-    background: #e0e0e0;
-
+    background: var(--primary-color-2);
 }
 
 .mainNav ul {
@@ -40,9 +41,9 @@
 }
 
 .mainNav:hover {
-    border-color: #ff0000;
+    border-color: var(--secondary-color-1);
 }
 
 .mainNav .current {
-    border-color: #6a1b9a;
+    border-color: var(--primary-color-1);
 }

@@ -1,13 +1,17 @@
+@import "config.css";
+
 .schedule_body {
+    /*position: relative;*/
+    margin-top: 4rem;
     width: 100%;
-    background: #ffffff;
+    background: var(--secondary-color-2);
     display: grid;
     grid-template-columns: repeat(8, 1fr);
 }
 
 .hours_column {
     grid-column: 1 / span 1;
-    background: #f3f3f3;
+    background: var(--primary-color-2);
     display: grid;
     grid-template-columns: repeat(1, 1fr);
 }
@@ -16,13 +20,13 @@
     grid-column: 2 / span 7;
     width: 100%;
     display: grid;
-    background: #ffffff;
+    background: var(--secondary-color-2);
     grid-template-columns: repeat(7, 1fr);
 }
 
 .hour_cell {
     border: #cccccc 1px solid;
     text-align: center;
-    background: #6a1b9a;
-    color: #ffffff;
+    background: var(--primary-color-1);
+    color: var(--text-color);
 }

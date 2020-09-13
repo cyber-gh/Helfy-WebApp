@@ -1,8 +1,8 @@
 import React from "react";
 
-import styles from "./ScheduleHeader.module.css";
+import styles from "../../css/ScheduleHeader.module.css";
 
-const ScheduleHeader = (props) => {
+const ScheduleHeader = () => {
   const weekDays = [
     "",
     "Monday",
@@ -16,9 +16,6 @@ const ScheduleHeader = (props) => {
 
   return (
     <div className={styles.schedule_header}>
-      <div className={styles.title}>
-        Week: {props.startDate} - {props.endDate}
-      </div>
       <div className={styles.days_row}>
         {weekDays.map((day, cnt) => {
           return (

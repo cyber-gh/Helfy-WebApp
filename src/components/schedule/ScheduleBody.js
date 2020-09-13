@@ -1,7 +1,7 @@
 import React from "react";
 import Cell from "./Cell";
 
-import styles from "./ScheduleBody.module.css"
+import styles from "../../css/ScheduleBody.module.css"
 
 const ScheduleBody = (props) => {
   const cellHeight = 60;

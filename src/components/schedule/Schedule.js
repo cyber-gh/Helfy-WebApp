@@ -1,15 +1,16 @@
 import React from "react";
-import ScheduleHeader from "./ScheduleHeader";
 import ScheduleBody from "./ScheduleBody";
 import { convertDay, generateOutOfSchedule, convertNumToHour, convertHourToNum } from "./utils";
+import ScheduleHeader from "./ScheduleHeader";
 
 class Schedule extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      startDate: "13.07",
-      endDate: "14.07",
+      monthDay: "13",
+      month: "August",
+      year: "2020",
       appointments: [],
       cells: [],
       minWeekStartHour: "",
@@ -134,14 +135,11 @@ class Schedule extends React.Component {
   render() {
     return (
       <div>
-        <ScheduleHeader
-          startDate={this.state.startDate}
-          endDate={this.state.endDate}
-        />
+        <ScheduleHeader />
         <ScheduleBody
           minWeekStartHour={this.state.minWeekStartHour}
           maxWeekEndHour={this.state.maxWeekEndHour}
-          rowsCnt={this.state.maxWeekEndHour - this.state.minWeekStartHour + 1} 
+          rowsCnt={this.state.maxWeekEndHour - this.state.minWeekStartHour + 1}
           workingHours={this.state.workingHours}
           cells={this.state.cells}
         />
