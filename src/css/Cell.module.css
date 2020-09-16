@@ -1,0 +1,23 @@
+@import "config.css";
+
+.schedule_cell {
+    background: var(--primary-color-1);
+    border: #cccccc 1px solid;
+    color: var(--text-color);
+}
+
+.out_of_schedule_cell {
+    background: var(--primary-color-2);
+    justify-content: center;
+    border: #cccccc 1px solid;
+    color: var(--text-color)
+}
+
+.appointment_cell {
+    background: var(--secondary-color-1);
+    color: #ffffff;
+    margin: .35rem .35rem;
+    justify-content: center;
+    border: #cccccc 1px solid;
+    border-radius: 0.5rem;
+}
