@@ -71,6 +71,11 @@ const Request = (props) => {
     setExpanded(!expanded)
   };
 
+  const Accepted = async () => {
+
+
+
+  }
   return (
     <Card className={classes.root}>
       <CardHeader

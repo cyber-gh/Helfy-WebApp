@@ -23,15 +23,11 @@ import Button from "@material-ui/core/Button";
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import Collapse from "@material-ui/core/Collapse";
 import Request from "./requests/Request";
-import Accordion from "@material-ui/core/Accordion";
-import AccordionSummary from "@material-ui/core/AccordionSummary";
-import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Grid from "@material-ui/core/Grid";
 import {grey} from "@material-ui/core/colors";
 
-const drawerWidth = 375;
+const drawerWidth = 400;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -83,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
-    justifyContent: 'flex-end',
+    justifyContent: 'space-between',
   },
   content: {
     flexGrow: 1,
@@ -173,8 +169,10 @@ export default function MyAppBar() {
           paper: classes.drawerPaper
         }}>
         <div className={classes.drawerHeader}>
-          <AccountCircleIcon />
-          <Typography variant={"subtitle2"}>Francu Richard Serban</Typography>
+          <div style={{display: 'inline'}}>
+            <AccountCircleIcon />
+            <Typography variant={"subtitle2"}>Francu Richard Serban</Typography>
+          </div>
           <IconButton onClick={() => handleDrawerClose()}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon/> : <ChevronRightIcon/>}
           </IconButton>
@@ -188,25 +186,39 @@ export default function MyAppBar() {
           <ListItem button={true} onClick={handleRequestExpandedClick}>
               <ListItemIcon><InboxIcon/></ListItemIcon>
               <ListItemText primary={"Requests"} />
-              <Drawer
-                className={classes.requestDrawer}
-                variant={'persistent'}
-                open={requestExpanded}
-                anchor={'top'}
-                classes={{
-                paper: classes.drawerPaper
-                }}>
-                <Grid spacing={3} className={classes.gridRoot}>
-                  <Grid item>
-                    <Request />
-                  </Grid>
-                  <Grid item >
-                    <Request />
-                  </Grid>
-                </Grid>
-              </Drawer>
           </ListItem>
         </List>
+        <Drawer
+          className={classes.requestDrawer}
+          variant={'persistent'}
+          open={requestExpanded}
+          anchor={'top'}
+          classes={{
+            paper: classes.drawerPaper
+          }}>
+          <Grid spacing={3} className={classes.gridRoot}>
+            <Grid item>
+              <List>
+                <ListItem button={true} key={"Schedule"}  onClick={handleRequestExpandedClick}>
+                  <ListItemIcon><CalendarViewDayIcon/></ListItemIcon>
+                  <ListItemText primary={"Schedule"} />
+                </ListItem>
+              </List>
+            </Grid>
+            <Grid item>
+              <Request />
+            </Grid>
+            <Grid item >
+              <Request />
+            </Grid>
+            <Grid item>
+              <Request />
+            </Grid>
+            <Grid item >
+              <Request />
+            </Grid>
+          </Grid>
+        </Drawer>
       </Drawer>
     </div>
   );
