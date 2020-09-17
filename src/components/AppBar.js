@@ -169,9 +169,11 @@ export default function MyAppBar() {
           paper: classes.drawerPaper
         }}>
         <div className={classes.drawerHeader}>
-          <div style={{display: 'inline'}}>
-            <AccountCircleIcon />
-            <Typography variant={"subtitle2"}>Francu Richard Serban</Typography>
+          <div style={{display: 'flex'}}>
+            <ListItem>
+              <ListItemIcon><AccountCircleIcon/></ListItemIcon>
+              <ListItemText primary="Francu Richard Serban"/>
+              </ListItem>
           </div>
           <IconButton onClick={() => handleDrawerClose()}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon/> : <ChevronRightIcon/>}
